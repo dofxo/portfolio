@@ -1,11 +1,12 @@
 import { useState } from "react";
-import ContentContainer from "./ContentContainer";
+import PagesContainer from "./PagesContainer";
 import { SideBar } from "../components/sidebar/";
 import MainLayout from "../templates/layouts/MainLayout";
-import { Typography } from "@mui/material";
-import TabPanel from "../components/TabPanel";
+import { Box, Typography } from "@mui/material";
+import Page from "../pages/parts/Page";
 import SideBarContainer from "./SideBarContainer";
 import MainContext from "../context";
+import { DrawerActionButton } from "../components/drawer";
 
 const AppContainer = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -17,31 +18,45 @@ const AppContainer = () => {
   };
 
   const tabs = [
-    <TabPanel pageNumber={pageNumber} index={0}>
-      <Typography variant="h5" sx={{ textAlign: "center" }}>
-        صفحه اصلی
-      </Typography>
-    </TabPanel>,
-    <TabPanel pageNumber={pageNumber} index={1}>
+    <Page pageNumber={pageNumber} index={0}>
+      <Box
+        sx={{
+          height: "100vh",
+          backgroundImage: "url(../../assets/images/image.jpg)",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+        <Typography
+          variant="h5"
+          color="whitesmoke"
+          sx={{ textAlign: "center", p: 2 }}
+        >
+          صفحه اصلی
+        </Typography>
+      </Box>
+    </Page>,
+    <Page pageNumber={pageNumber} index={1}>
       <Typography variant="h5" sx={{ textAlign: "center" }}>
         درباره من
       </Typography>
-    </TabPanel>,
-    <TabPanel pageNumber={pageNumber} index={2}>
+    </Page>,
+    <Page pageNumber={pageNumber} index={2}>
       <Typography variant="h5" sx={{ textAlign: "center" }}>
         رزومه من
       </Typography>
-    </TabPanel>,
-    <TabPanel pageNumber={pageNumber} index={3}>
+    </Page>,
+    <Page pageNumber={pageNumber} index={3}>
       <Typography variant="h5" sx={{ textAlign: "center" }}>
         نمونه کارها
       </Typography>
-    </TabPanel>,
-    <TabPanel pageNumber={pageNumber} index={4}>
+    </Page>,
+    <Page pageNumber={pageNumber} index={4}>
       <Typography variant="h5" sx={{ textAlign: "center" }}>
         ارتباط با من
       </Typography>
-    </TabPanel>,
+    </Page>,
   ];
 
   return (
@@ -53,11 +68,12 @@ const AppContainer = () => {
           <SideBarContainer>
             <SideBar />
           </SideBarContainer>
-          <ContentContainer>
+          <DrawerActionButton />
+          <PagesContainer>
             {tabs.map((item, idx) => (
               <div key={idx}>{item}</div>
             ))}
-          </ContentContainer>
+          </PagesContainer>
         </MainLayout>
       </MainContext.Provider>
     </>

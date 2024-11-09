@@ -15,6 +15,7 @@ const DrawerActionButton = () => {
           lg: "none",
           xl: "none",
         },
+        position: "absolute",
       }}
     >
       <Fab
