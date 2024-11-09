@@ -1,0 +1,12 @@
+@use "/public/assets/fonts/roboto/Roboto.scss";
+@use "/public/assets/fonts/iransans/IRANSans.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  padding: 0
+}
