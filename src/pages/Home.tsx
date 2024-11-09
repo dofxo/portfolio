@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
 import image from "../../public/assets/images/image.jpg";
 import Typed from "typed.js";
 import { useEffect, useRef } from "react";
+import BlurWrapper from "../components/helpers/BlurWarpper";
+import { Typography } from "@mui/material";
 
 const Home = () => {
   const nameEl = useRef(null);
@@ -32,21 +33,13 @@ const Home = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        backgroundImage: `url(${image})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-      className="flex flex-col h-[100vh] justify-center items-center "
-    >
+    <BlurWrapper imageUrl={image}>
       <Typography
         ref={nameEl}
         variant="h3"
         color="primary.main"
         sx={{ textAlign: "center", p: 2 }}
-      ></Typography>
+      />
       <Typography
         ref={infoEl}
         variant="h4"
@@ -57,8 +50,8 @@ const Home = () => {
           textDecoration: "underline",
           textDecorationColor: "#7A5DCB",
         }}
-      ></Typography>
-    </Box>
+      />
+    </BlurWrapper>
   );
 };
 
