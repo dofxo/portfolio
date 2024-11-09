@@ -2,17 +2,7 @@ import { Box, Divider } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { SideBarHeader, SideBarFooter, SideBarTabs } from ".";
 
-const SideBarContent = ({
-  value,
-  handleChange,
-  isInDrawer = false,
-  setDrawerOpen,
-}: {
-  value: number;
-  handleChange: (event: any, newValue: number) => void;
-  isInDrawer?: boolean;
-  setDrawerOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const SideBarContent = ({ isInDrawer = false }: { isInDrawer?: boolean }) => {
   return (
     <Box
       sx={{
@@ -33,11 +23,7 @@ const SideBarContent = ({
 
         <Divider variant="middle" sx={{ mt: 2, bgcolor: grey[300] }} />
 
-        <SideBarTabs
-          value={value}
-          setDrawerOpen={setDrawerOpen}
-          handleChange={handleChange}
-        />
+        <SideBarTabs />
 
         <Divider variant="middle" sx={{ bgcolor: grey[300] }} />
         <SideBarFooter />

@@ -1,11 +1,10 @@
 import { MenuRounded } from "@mui/icons-material";
 import { Box, Fab } from "@mui/material";
+import { useContext } from "react";
+import MainContext from "../../context";
 
-const DrawerActionButton = ({
-  setDrawerOpen,
-}: {
-  setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const DrawerActionButton = () => {
+  const { setDrawerOpen } = useContext(MainContext);
   return (
     <Box
       sx={{

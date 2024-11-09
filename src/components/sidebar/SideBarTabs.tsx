@@ -1,37 +1,13 @@
 import { Tab, Tabs } from "@mui/material";
 
-import {
-  HomeRounded,
-  FaceRounded,
-  TextSnippetRounded,
-  TerminalRounded,
-  ConnectWithoutContactRounded,
-} from "@mui/icons-material";
 import { grey } from "@mui/material/colors";
+import { useContext } from "react";
+import MainContext from "../../context";
+import { tabProps, tabs } from "../data/tabsData.sideBar";
 
-const SideBarTabs = ({
-  value,
-  handleChange,
-  setDrawerOpen,
-}: {
-  value: number;
-  handleChange: (event: any, newValue: number) => void;
-  setDrawerOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  const tabProps = (index: number) => {
-    return {
-      id: `sidebar-tab-${index}`,
-      "aria-controls": `tabpanel-${index}`,
-    };
-  };
-
-  const tabs = [
-    { text: "خانه", icon: HomeRounded },
-    { text: "درباره من", icon: FaceRounded },
-    { text: "رزومه من", icon: TextSnippetRounded },
-    { text: "نمونه کارها", icon: TerminalRounded },
-    { text: "ارتباط با من", icon: ConnectWithoutContactRounded },
-  ];
+const SideBarTabs = () => {
+  const { pageNumber, handlePageNumber, setDrawerOpen } =
+    useContext(MainContext);
 
   return (
     <Tabs
@@ -39,8 +15,8 @@ const SideBarTabs = ({
       variant="scrollable"
       scrollButtons="auto"
       allowScrollButtonsMobile
-      value={value}
-      onChange={handleChange}
+      value={pageNumber}
+      onChange={handlePageNumber}
       className="max-h-[350px]"
       sx={{ p: 0.5 }}
     >
@@ -57,9 +33,7 @@ const SideBarTabs = ({
             },
             color: "whitesmoke",
           }}
-          onClick={() => {
-            if (setDrawerOpen) setDrawerOpen(false);
-          }}
+          onClick={() => setDrawerOpen(false)}
           icon={<item.icon />}
           label={item.text}
           key={idx}

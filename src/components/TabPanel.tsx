@@ -2,12 +2,12 @@ import { Box } from "@mui/material";
 
 const TabPanel = ({
   children,
-  value,
+  pageNumber,
   index,
   ...others
 }: {
   children: any;
-  value: number;
+  pageNumber: number;
   index: number;
   others?: any;
 }) => {
@@ -15,11 +15,11 @@ const TabPanel = ({
     <div
       aria-labelledby={`sidebar-tab-${index}`}
       id={`tabpanel-${index}`}
-      hidden={value !== index}
+      hidden={pageNumber !== index}
       role="tabpanel"
       {...others}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {pageNumber === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 };
