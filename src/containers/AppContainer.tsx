@@ -7,6 +7,7 @@ import Page from "../pages/parts/Page";
 import SideBarContainer from "./SideBarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../components/drawer";
+import SwipeableViews from "react-swipeable-views";
 
 const AppContainer = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -70,9 +71,11 @@ const AppContainer = () => {
           </SideBarContainer>
           <DrawerActionButton />
           <PagesContainer>
-            {tabs.map((item, idx) => (
-              <div key={idx}>{item}</div>
-            ))}
+            <SwipeableViews index={pageNumber} onChangeIndex={handlePageNumber}>
+              {tabs.map((item, idx) => (
+                <div key={idx}>{item}</div>
+              ))}
+            </SwipeableViews>
           </PagesContainer>
         </MainLayout>
       </MainContext.Provider>
