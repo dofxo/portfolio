@@ -15,9 +15,9 @@ const TabPanel = ({
     <div
       aria-labelledby={`sidebar-tab-${index}`}
       id={`tabpanel-${index}`}
-      {...others}
       hidden={value !== index}
       role="tabpanel"
+      {...others}
     >
       {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>

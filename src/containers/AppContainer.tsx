@@ -1,12 +1,14 @@
 import { useState } from "react";
-import ContentContainer from "../components/ContentContainer";
-import SideBar from "../components/SideBar";
+import ContentContainer from "./ContentContainer";
+import { SideBar } from "../components/sidebar/";
 import MainLayout from "../templates/layouts/MainLayout";
 import { Typography } from "@mui/material";
 import TabPanel from "../components/TabPanel";
+import SideBarContainer from "./SideBarContainer";
 
-const App = () => {
+const AppContainer = () => {
   const [value, setValue] = useState(0);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   //@ts-ignore
   const handleChange = (event: any, newValue: number) => setValue(newValue);
@@ -42,7 +44,9 @@ const App = () => {
   return (
     <>
       <MainLayout>
-        <SideBar value={value} handleChange={handleChange} />
+        <SideBarContainer>
+          <SideBar value={value} handleChange={handleChange} />
+        </SideBarContainer>
         <ContentContainer>
           {tabs.map((item, idx) => (
             <div key={idx}>{item}</div>
@@ -53,4 +57,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AppContainer;
