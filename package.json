@@ -4,14 +4,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+{
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "gh-pages": "gh-pages -d dist",
-    "deploy": "npm run build && npm run gh-pages"
-  },
+    "postdeploy": "cp CNAME ./dist/",
+    "deploy": "npm run build && npm run postdeploy && npm run gh-pages"
+  }
+,
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
