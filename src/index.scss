@@ -1,5 +1,6 @@
-@use "/public/assets/fonts/roboto/Roboto.scss";
-@use "/public/assets/fonts/iransans/IRANSans.scss";
+@use "/public/assets/fonts/roboto/Roboto";
+@use "/public/assets/fonts/iransans/IRANSans";
+@use "../src/scss/mui";
 
 @tailwind base;
 @tailwind components;
@@ -8,5 +9,13 @@
 
 body {
   margin: 0;
-  padding: 0
+  padding: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.svgBlack {
+  svg {
+    color: black !important;
+  }
 }
