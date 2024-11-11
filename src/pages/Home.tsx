@@ -1,12 +1,14 @@
 import image from "../../public/assets/images/image.jpg";
 import Typed from "typed.js";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import BlurWrapper from "../components/helpers/BlurWarpper";
 import { Typography } from "@mui/material";
+import TextTransition, { presets } from "react-text-transition";
+import TitleAdder from "../HOC/TitleAdder";
 
 const Home = () => {
+  const [showText, setShowText] = useState(false);
   const nameEl = useRef(null);
-  const infoEl = useRef(null);
 
   useEffect(() => {
     const typedName = new Typed(nameEl.current, {
@@ -17,18 +19,12 @@ const Home = () => {
       showCursor: false,
     });
 
-    const typedInfo = new Typed(infoEl.current, {
-      strings: ["توسعه دهنده فرانت اند"],
-      startDelay: 1500,
-      typeSpeed: 80,
-      backSpeed: 50,
-      backDelay: 50,
-      showCursor: false,
-    });
+    setTimeout(() => {
+      setShowText(true);
+    }, 1000);
 
     return () => {
       typedName.destroy();
-      typedInfo.destroy();
     };
   }, []);
 
@@ -40,19 +36,24 @@ const Home = () => {
         color="primary.main"
         sx={{ textAlign: "center", p: 2 }}
       />
-      <Typography
-        ref={infoEl}
-        variant="h4"
-        color="whitesmoke"
-        sx={{
-          textAlign: "center",
-          p: 2,
-          textDecoration: "underline",
-          textDecorationColor: "#7A5DCB",
-        }}
-      />
+      <TextTransition springConfig={presets.gentle}>
+        {showText && (
+          <Typography
+            variant="h4"
+            color="whitesmoke"
+            sx={{
+              textAlign: "center",
+              p: 2,
+              textDecoration: "underline",
+              textDecorationColor: "#7A5DCB",
+            }}
+          >
+            توسعه دهنده فرانت اند (ReactJs)
+          </Typography>
+        )}
+      </TextTransition>
     </BlurWrapper>
   );
 };
 
-export default Home;
+export default TitleAdder(Home, "صفحه اصلی");

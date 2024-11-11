@@ -6,6 +6,7 @@ import DevInfo from "./parts/DevInfo";
 import { devInfo } from "../components/data/devInfo";
 import CustomDivier from "./parts/CustomDivier";
 import Skills from "./parts/Skills";
+import TitleAdder from "../HOC/TitleAdder";
 
 const About = () => {
   return (
@@ -69,4 +70,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default TitleAdder(About, "درباره من");
