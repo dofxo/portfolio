@@ -1,7 +1,8 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Box, IconButton, Typography } from "@mui/material";
 import avatarImg from "../../../public/assets/images/dofxo.jpg";
 import { RandomReveal } from "react-random-reveal";
 import { farsiAlphabet } from "../../constant/persianAlphabet";
+import { social } from "../data/socials";
 
 const SideBarHeader = () => {
   return (
@@ -22,6 +23,16 @@ const SideBarHeader = () => {
       <Typography variant="caption" color="gray">
         <RandomReveal isPlaying duration={2} characters="Frontend Developer" />
       </Typography>
+
+      <Box component="div" sx={{ margin: "0 auto", textAlign: "center" }}>
+        {social.map((item, idx) => (
+          <IconButton key={idx}>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
+              <item.icon className="text-gray-500" />
+            </a>
+          </IconButton>
+        ))}
+      </Box>
     </>
   );
 };
