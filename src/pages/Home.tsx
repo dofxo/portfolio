@@ -4,8 +4,6 @@ import { Typography, Box } from "@mui/material";
 import TextTransition, { presets } from "react-text-transition";
 import TitleAdder from "../HOC/TitleAdder";
 import Particles from "react-particles";
-import { loadFull } from "tsparticles";
-import { particlesOption } from "../constant/particlesConfig";
 import backgroundImg from "/src/assets/images/image.jpg";
 
 const Home = () => {
@@ -28,14 +26,6 @@ const Home = () => {
     return () => {
       typedName.destroy();
     };
-  }, []);
-
-  const particlesInit = useCallback(async (engine: any) => {
-    loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container: any) => {
-    await container;
   }, []);
 
   return (
@@ -75,15 +65,6 @@ const Home = () => {
           </Typography>
         </TextTransition>
       </Box>
-
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        /*
-        // @ts-ignore */
-        options={particlesOption}
-      />
     </Box>
   );
 };
