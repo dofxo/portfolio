@@ -1,7 +1,7 @@
 import { Card, CardContent, Avatar, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
-import avatar from "../../public/assets/images/MohammadKargar.jpg";
+import avatar from "/src/assets/images/MohammadKargar.jpg";
 import DevInfo from "./parts/DevInfo";
 import { devInfo } from "../components/data/devInfo";
 import CustomDivier from "./parts/CustomDivier";

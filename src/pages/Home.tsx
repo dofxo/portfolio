@@ -6,6 +6,7 @@ import TitleAdder from "../HOC/TitleAdder";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { particlesOption } from "../constant/particlesConfig";
+import backgroundImg from "/src/assets/images/image.jpg";
 
 const Home = () => {
   const [showText, setShowText] = useState(false);
@@ -46,7 +47,7 @@ const Home = () => {
         justifyContent: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundImage: "url(../../public/assets/images/image.jpg)",
+        backgroundImage: `url(${backgroundImg})`,
         backgroundPosition: "center",
       }}
     >

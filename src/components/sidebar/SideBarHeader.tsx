@@ -1,5 +1,5 @@
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
-import avatarImg from "../../../public/assets/images/dofxo.jpg";
+import avatarImg from "/src/assets/images/dofxo.jpg";
 import { RandomReveal } from "react-random-reveal";
 import { farsiAlphabet } from "../../constant/persianAlphabet";
 import { social } from "../data/socials";
