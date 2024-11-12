@@ -21,7 +21,6 @@
     "react-error-boundary": "^4.1.2",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.3.0",
-    "react-particles": "^2.5.3",
     "react-random-reveal": "^2.0.1",
     "react-router-dom": "^6.27.0",
     "react-swipeable-views": "^0.14.0",
@@ -29,7 +28,6 @@
     "sass": "^1.80.6",
     "stylis": "^4.1.1",
     "stylis-plugin-rtl": "^2.1.1",
-    "tsparticles": "^2.5.3",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
