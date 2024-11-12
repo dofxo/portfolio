@@ -1,14 +1,14 @@
-import cssIcon from "../../../public/assets/images/css.svg";
-import htmlIcon from "../../../public/assets/images/html.svg";
-import jsIcon from "../../../public/assets/images/js.svg";
-import tsIcon from "../../../public/assets/images/ts.svg";
-import reactIcon from "../../../public/assets/images/react.svg";
-import sassIcon from "../../../public/assets/images/sass.svg";
-import tailwindIcon from "../../../public/assets/images/tailwind.svg";
-import muiIcon from "../../../public/assets/images/MUI.svg";
-import gitIcon from "../../../public/assets/images/git.svg";
-import nextJsIcon from "../../../public/assets/images/next.svg";
-import supabaseIcon from "../../../public/assets/images/supabase.svg";
+import cssIcon from "/src/assets/images/css.svg";
+import htmlIcon from "/src/assets/images/html.svg";
+import jsIcon from "/src/assets/images/js.svg";
+import tsIcon from "/src/assets/images/ts.svg";
+import reactIcon from "/src/assets/images/react.svg";
+import sassIcon from "/src/assets/images/sass.svg";
+import tailwindIcon from "/src/assets/images/tailwind.svg";
+import muiIcon from "/src/assets/images/MUI.svg";
+import gitIcon from "/src/assets/images/git.svg";
+import nextJsIcon from "/src/assets/images/next.svg";
+import supabaseIcon from "/src/assets/images/supabase.svg";
 
 export const devSkills = [
   {
