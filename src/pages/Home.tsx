@@ -1,9 +1,8 @@
 import Typed from "typed.js";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Typography, Box } from "@mui/material";
 import TextTransition, { presets } from "react-text-transition";
 import TitleAdder from "../HOC/TitleAdder";
-import Particles from "react-particles";
 import backgroundImg from "/src/assets/images/image.jpg";
 
 const Home = () => {
