@@ -1,5 +1,4 @@
 {
-  "homepage": "https://dofxo.github.io/portfolio",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -8,10 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "gh-pages": "gh-pages -d dist",
-    "postdeploy": "cp CNAME ./dist/",
-    "deploy": "npm run build && npm run postdeploy && npm run gh-pages"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
