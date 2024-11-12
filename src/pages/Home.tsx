@@ -70,7 +70,7 @@ const Home = () => {
               textDecoration: "underline",
             }}
           >
-            {showText ? "توسعه دهنده فرانت اند (ReactJs)" : ""}
+            {showText ? "(ReactJs) توسعه دهنده فرانت اند" : ""}
           </Typography>
         </TextTransition>
       </Box>
