@@ -8,7 +8,7 @@ import SideBarContainer from "./SideBarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../components/drawer";
 import SwipeableViews from "react-swipeable-views";
-import { About, Home, Resume } from "../pages";
+import { About, Home, Projects, Resume } from "../pages";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -40,9 +40,7 @@ const AppContainer = () => {
       <Resume />
     </Page>,
     <Page pageNumber={pageNumber} index={3}>
-      <Typography variant="h5" sx={{ textAlign: "center" }}>
-        نمونه کارها
-      </Typography>
+      <Projects />
     </Page>,
     <Page pageNumber={pageNumber} index={4}>
       <Typography variant="h5" sx={{ textAlign: "center" }}>
