@@ -8,34 +8,52 @@ import {
   TimelineConnector,
 } from "@mui/lab";
 import { devJob } from "../../components/data/devJob";
-import { Typography } from "@mui/material";
+import { Slide, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
 
 const JobsTimeLine = () => {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    return () => {
+      setLoading(false);
+    };
+  });
+
   return (
     <Timeline position="right" sx={{ direction: "ltr" }}>
       {devJob.map((item, idx) => (
-        <TimelineItem key={idx}>
-          <TimelineSeparator>
-            <TimelineDot color="warning" variant="outlined">
-              <HomeRepairServiceRounded color="warning" />
-            </TimelineDot>
-            {idx !== devJob.length - 1 ? <TimelineConnector /> : null}
-          </TimelineSeparator>
-          <TimelineContent>
-            <Typography variant="caption" color="gray">
-              {item.year}
-            </Typography>
-            <Typography variant="body1" color="black">
-              {item.jobTitle}
-            </Typography>
-            <Typography variant="body2" color="black">
-              {item.time}
-            </Typography>
-            <Typography variant="body2" color="black">
-              {item.place}
-            </Typography>
-          </TimelineContent>
-        </TimelineItem>
+        <Slide
+          direction="right"
+          in={loading}
+          style={{
+            transitionDelay: loading ? `${idx + 3}99ms` : "0ms",
+          }}
+        >
+          <TimelineItem key={idx}>
+            <TimelineSeparator>
+              <TimelineDot color="warning" variant="outlined">
+                <HomeRepairServiceRounded color="warning" />
+              </TimelineDot>
+              {idx !== devJob.length - 1 ? <TimelineConnector /> : null}
+            </TimelineSeparator>
+            <TimelineContent>
+              <Typography variant="caption" color="gray">
+                {item.year}
+              </Typography>
+              <Typography variant="body1" color="black">
+                {item.jobTitle}
+              </Typography>
+              <Typography variant="body2" color="black">
+                {item.time}
+              </Typography>
+              <Typography variant="body2" color="black">
+                {item.place}
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+        </Slide>
       ))}
     </Timeline>
   );
