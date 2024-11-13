@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PagesContainer from "./PagesContainer";
 import { SideBar } from "../components/sidebar/";
 import MainLayout from "../templates/layouts/MainLayout";
@@ -9,15 +9,25 @@ import MainContext from "../context";
 import { DrawerActionButton } from "../components/drawer";
 import SwipeableViews from "react-swipeable-views";
 import { About, Home } from "../pages";
+import { useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const AppContainer = () => {
   const [pageNumber, setPageNumber] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
+  // media query
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+
   //@ts-ignore
   const handlePageNumber = (event: any, newPageNumber: number) => {
     setPageNumber(newPageNumber);
   };
+
+  useEffect(() => {
+    if (isMdUp) setDrawerOpen(false);
+  }, [isMdUp]);
 
   const tabs = [
     <Page pageNumber={pageNumber} index={0}>
