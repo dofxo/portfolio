@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import { CodeRounded } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
 import { projects } from "../components/data/projects";
+import { pink } from "@mui/material/colors";
 
 const Projects = () => {
   const [loading, setLoading] = useState(false);
@@ -53,7 +54,7 @@ const Projects = () => {
             />
           </Box>
         </Slide>
-        <Grid container sx={{ mx: 3 }}>
+        <Grid container sx={{ mx: 3, mt: 10 }}>
           {projects.map((item, idx) => (
             <Grid
               key={idx}
@@ -67,7 +68,7 @@ const Projects = () => {
                   transitionDelay: loading ? `${idx + 3}00ms` : "0ms",
                 }}
               >
-                <Card sx={{ maxWidth: 345, backgroundColor: "steelblue" }}>
+                <Card sx={{ maxWidth: 345, backgroundColor: "primary.main" }}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
@@ -77,7 +78,12 @@ const Projects = () => {
                       alt={item.title}
                     />
                     <CardContent>
-                      <Typography textAlign="left" gutterBottom variant="body1">
+                      <Typography
+                        textAlign="left"
+                        sx={{ color: pink[900] }}
+                        gutterBottom
+                        variant="body1"
+                      >
                         {item.title}
                       </Typography>
                       <Typography
@@ -91,12 +97,12 @@ const Projects = () => {
                       </Typography>
                     </CardContent>
                   </CardActionArea>
-                  <CardActions>
+                  <CardActions className="justify-end">
                     <Button
                       href={item.link}
                       size="small"
-                      color="primary"
                       target="_blank"
+                      sx={{ color: pink[100] }}
                     >
                       نمایش وبسایت
                     </Button>
