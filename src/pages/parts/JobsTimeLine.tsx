@@ -22,16 +22,17 @@ const JobsTimeLine = () => {
   });
 
   return (
-    <Timeline position="right" sx={{ direction: "ltr" }}>
+    <Timeline position="right" sx={{ direction: "ltr", width: 1 }}>
       {devJob.map((item, idx) => (
         <Slide
+          key={idx}
           direction="right"
           in={loading}
           style={{
             transitionDelay: loading ? `${idx + 3}99ms` : "0ms",
           }}
         >
-          <TimelineItem key={idx}>
+          <TimelineItem>
             <TimelineSeparator>
               <TimelineDot color="warning" variant="outlined">
                 <HomeRepairServiceRounded color="warning" />
