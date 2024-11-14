@@ -19,9 +19,9 @@ const About = () => {
   return (
     <Card
       sx={{
-        height: "100vh",
         backgroundColor: "whitesmoke",
         overflow: "hidden",
+        minHeight: "100vh",
       }}
     >
       <CardContent>

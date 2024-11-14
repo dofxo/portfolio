@@ -7,7 +7,7 @@ const TitleAdder = (WrappedComponent: any, title: string) => {
         <Helmet>
           <title>محمد کارگر | {title}</title>
         </Helmet>
-        <WrappedComponent {...props} />{" "}
+        <WrappedComponent {...props} />
       </>
     );
   };

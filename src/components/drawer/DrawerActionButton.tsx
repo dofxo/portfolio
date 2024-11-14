@@ -15,6 +15,8 @@ const DrawerActionButton = () => {
           lg: "none",
           xl: "none",
         },
+        top: 30,
+        left: 0,
         position: "absolute",
       }}
     >

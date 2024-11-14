@@ -18,3 +18,16 @@
 .MuiCard-root::-webkit-scrollbar {
   display: none;
 }
+
+li.MuiTimelineItem-root.MuiTimelineItem-positionRight {
+
+  @media only screen and (max-width: 600px) {
+    margin-right: 100px;
+
+    &::before {
+      display: none !important;
+    }
+
+
+  }
+}
