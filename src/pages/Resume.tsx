@@ -10,7 +10,7 @@ const Resume = () => {
   return (
     <Card
       sx={{
-        height: "100vh",
+        minHeight: "100vh",
         backgroundColor: "whitesmoke",
       }}
     >

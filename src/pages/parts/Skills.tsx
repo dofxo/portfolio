@@ -4,7 +4,7 @@ import Skill from "./Skill";
 
 const Skills = () => {
   return (
-    <Box className="flex justify-center gap-10 flex-wrap">
+    <Box className="flex justify-center gap-10 flex-wrap pb-[20px]">
       {devSkills.map((item, idx) => (
         <Skill key={idx} icon={item.icon} />
       ))}

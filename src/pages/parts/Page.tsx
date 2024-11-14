@@ -19,9 +19,7 @@ const Page = ({
       role="tabpanel"
       {...others}
     >
-      {pageNumber === index && (
-        <Box sx={{ height: "100vh", overflow: "hidden" }}>{children}</Box>
-      )}
+      {pageNumber === index && <Box sx={{ height: "100vh" }}>{children}</Box>}
     </div>
   );
 };
