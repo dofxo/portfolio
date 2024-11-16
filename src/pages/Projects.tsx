@@ -18,7 +18,7 @@ import { useEffect, useState } from "react";
 import { CodeRounded } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
 import { projects } from "../components/data/projects";
-import { pink, purple } from "@mui/material/colors";
+import { pink } from "@mui/material/colors";
 
 const Projects = () => {
   const [loading, setLoading] = useState(false);
