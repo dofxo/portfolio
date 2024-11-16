@@ -7,7 +7,7 @@ import {
   TimelineContent,
   TimelineConnector,
 } from "@mui/lab";
-import { devJob } from "../../components/data/devJob";
+import { devJob } from "../../constant/data/devJob";
 import { Slide, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 

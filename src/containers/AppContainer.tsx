@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import PagesContainer from "./PagesContainer";
 import { SideBar } from "../components/sidebar/";
 import MainLayout from "../templates/layouts/MainLayout";
-import { Typography } from "@mui/material";
 import Page from "../pages/parts/Page";
 import SideBarContainer from "./SideBarContainer";
 import MainContext from "../context";
 import { DrawerActionButton } from "../components/drawer";
 import SwipeableViews from "react-swipeable-views";
-import { About, Home, Projects, Resume } from "../pages";
+import { About, Home, Projects, Resume, Contact } from "../pages";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -43,9 +42,7 @@ const AppContainer = () => {
       <Projects />
     </Page>,
     <Page pageNumber={pageNumber} index={4}>
-      <Typography variant="h5" sx={{ textAlign: "center" }}>
-        ارتباط با من
-      </Typography>
+      <Contact />
     </Page>,
   ];
 

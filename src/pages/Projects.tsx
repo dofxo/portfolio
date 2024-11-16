@@ -17,7 +17,7 @@ import CustomDivider from "./parts/CustomDivier";
 import { useEffect, useState } from "react";
 import { CodeRounded } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
-import { projects } from "../components/data/projects";
+import { projects } from "../constant/data/projects";
 import { pink } from "@mui/material/colors";
 
 const Projects = () => {
@@ -68,19 +68,18 @@ const Projects = () => {
                   transitionDelay: loading ? `${idx + 3}00ms` : "0ms",
                 }}
               >
-                <Card sx={{ maxWidth: 345, backgroundColor: "primary.main" }}>
+                <Card sx={{ maxWidth: 345, backgroundColor: "#b164c5" }}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
-                      height={200}
-                      width={200}
                       image={item.image}
                       alt={item.title}
+                      sx={{ height: "200px", width: 1 }}
                     />
                     <CardContent>
                       <Typography
                         textAlign="left"
-                        sx={{ color: pink[900] }}
+                        sx={{ color: "#000" }}
                         gutterBottom
                         variant="body1"
                       >
@@ -91,9 +90,9 @@ const Projects = () => {
                         color="textSecondary"
                         gutterBottom
                         variant="body2"
-                        sx={{ direction: "ltr" }}
+                        sx={{ direction: "ltr", minHeight: "50px" }}
                       >
-                        <EllipsisText text={item.info} length="100" />
+                        <EllipsisText text={item.info} length={95} />
                       </Typography>
                     </CardContent>
                   </CardActionArea>
@@ -102,7 +101,7 @@ const Projects = () => {
                       href={item.link}
                       size="small"
                       target="_blank"
-                      sx={{ color: pink[100] }}
+                      sx={{ color: pink[900] }}
                     >
                       نمایش وبسایت
                     </Button>

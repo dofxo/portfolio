@@ -1,5 +1,5 @@
 import { SchoolRounded } from "@mui/icons-material";
-import { devEdu } from "../../components/data/devEdu";
+import { devEdu } from "../../constant/data/devEdu";
 import {
   TimelineConnector,
   TimelineContent,
