@@ -3,7 +3,7 @@ import { Tab, Tabs } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useContext } from "react";
 import MainContext from "../../context";
-import { tabProps, tabs } from "../data/tabsData.sideBar";
+import { tabProps, tabs } from "../../constant/data/tabsData.sideBar";
 
 const SideBarTabs = () => {
   const { pageNumber, handlePageNumber, setDrawerOpen } =

@@ -17,7 +17,7 @@ import CustomDivider from "./parts/CustomDivier";
 import { useEffect, useState } from "react";
 import { CodeRounded } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
-import { projects } from "../components/data/projects";
+import { projects } from "../constant/data/projects";
 import { pink } from "@mui/material/colors";
 
 const Projects = () => {

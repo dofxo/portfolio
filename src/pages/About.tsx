@@ -9,7 +9,7 @@ import {
 import Grid from "@mui/material/Grid2";
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
 import avatar from "/src/assets/images/MohammadKargar.jpg";
-import { experiencesInfo } from "../components/data/experiencesInfo";
+import { experiencesInfo } from "../constant/data/experiencesInfo";
 import CustomDivier from "./parts/CustomDivier";
 import Skills from "./parts/Skills";
 import TitleAdder from "../HOC/TitleAdder";

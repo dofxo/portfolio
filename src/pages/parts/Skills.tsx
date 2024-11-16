@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { devSkills } from "../../components/data/devSkills";
 import Skill from "./Skill";
+import { devSkills } from "../../constant/data/devSkills";
 
 const Skills = () => {
   return (
