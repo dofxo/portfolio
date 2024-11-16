@@ -8,4 +8,5 @@ export const contactValidationSchema = yup.object().shape({
     .required("ایمیل الزامی می باشد"),
   subject: yup.string().required("عنوان الزامی می باشد"),
   message: yup.string().required("نوشتن پیام الزامی می باشد"),
+  recaptcha: yup.string().required("کپتچا الزامی می باشد"),
 });

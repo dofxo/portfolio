@@ -22,6 +22,7 @@ import { useEffect, useState } from "react";
 import worldMapImage from "../../src/assets/images/worldmap.svg";
 import { useFormik } from "formik";
 import { contactValidationSchema } from "./validations/contactValidation";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -38,6 +39,7 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
+    recaptcha: "",
   };
 
   const formik = useFormik({
@@ -186,7 +188,19 @@ const Contact = () => {
                       </Grid>
                     </Grid>
                   </CardContent>
-                  <CardActions className="flex-col items-end">
+                  <CardActions className="flex-col !items-end gap-5 flex">
+                    <ReCAPTCHA
+                      sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                      hl="fa"
+                      onChange={(value) =>
+                        formik.setFieldValue("recaptcha", value)
+                      }
+                    />
+                    {formik.errors.recaptcha && formik.touched.recaptcha && (
+                      <Typography variant="caption" color="error">
+                        {formik.errors.recaptcha}
+                      </Typography>
+                    )}
                     <Button
                       fullWidth
                       type="submit"
