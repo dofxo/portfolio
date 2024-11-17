@@ -2,9 +2,9 @@ import Typed from "typed.js";
 import { useEffect, useRef, useState } from "react";
 import { Typography, Box } from "@mui/material";
 import TextTransition, { presets } from "react-text-transition";
-import TitleAdder from "../HOC/TitleAdder";
+import TitleAdder from "../../HOC/TitleAdder";
 import backgroundImg from "/src/assets/images/image.jpg";
-import useMediaCustomQuery from "../customHooks/useMediaCustomQuery";
+import useMediaCustomQuery from "../../customHooks/useMediaCustomQuery";
 
 const Home = () => {
   const nameEl = useRef(null);

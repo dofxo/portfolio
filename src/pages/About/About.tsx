@@ -9,10 +9,10 @@ import {
 import Grid from "@mui/material/Grid2";
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
 import avatar from "/src/assets/images/MohammadKargar.jpg";
-import { experiencesInfo } from "../constant/data/experiencesInfo";
-import CustomDivier from "./parts/CustomDivier";
-import Skills from "./parts/Skills";
-import TitleAdder from "../HOC/TitleAdder";
+import { experiencesInfo } from "../../constant/data/experiencesInfo";
+import CustomDivier from "../../components/general/CustomDivier";
+import Skills from "./Skills";
+import TitleAdder from "../../HOC/TitleAdder";
 import CountUp from "react-countup";
 
 const About = () => {

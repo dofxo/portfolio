@@ -10,6 +10,7 @@ import SwipeableViews from "react-swipeable-views";
 import { About, Home, Projects, Resume, Contact } from "../pages";
 import { useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { Toaster } from "react-hot-toast";
 
 const AppContainer = () => {
   const [pageNumber, setPageNumber] = useState(0);
@@ -64,6 +65,7 @@ const AppContainer = () => {
             </SwipeableViews>
           </PagesContainer>
         </MainLayout>
+        <Toaster position="top-right" reverseOrder={false} />
       </MainContext.Provider>
     </>
   );

@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -9,8 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import TitleAdder from "../HOC/TitleAdder";
-import CustomDivier from "./parts/CustomDivier";
+import TitleAdder from "../../HOC/TitleAdder";
+import CustomDivier from "../../components/general/CustomDivier";
 import {
   AccountCircle,
   EmailRounded,
@@ -19,13 +18,18 @@ import {
   SubjectRounded,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import worldMapImage from "../../src/assets/images/worldmap.svg";
+import worldMapImage from "../../../src/assets/images/worldmap.svg";
 import { useFormik } from "formik";
-import { contactValidationSchema } from "./validations/contactValidation";
+import { contactValidationSchema } from "../validations/contactValidation";
 import ReCAPTCHA from "react-google-recaptcha";
+import { formDataType } from "../../types";
+import { submitForm } from "../../services/submitForm";
+import { LoadingButton } from "@mui/lab";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [buttonLoading, setButtonLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -34,7 +38,7 @@ const Contact = () => {
     };
   }, []);
 
-  const contactInputNames = {
+  const contactInputNames: formDataType = {
     fullname: "",
     email: "",
     subject: "",
@@ -44,8 +48,16 @@ const Contact = () => {
 
   const formik = useFormik({
     initialValues: contactInputNames,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (formData: formDataType) => {
+      setButtonLoading(true);
+      try {
+        await submitForm(formData);
+        toast.success("پیام شما با موفقیت ثبت شد");
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setButtonLoading(false);
+      }
     },
     validationSchema: contactValidationSchema,
   });
@@ -59,7 +71,7 @@ const Contact = () => {
           icon={<AccountCircle />}
           color="warning"
         />
-        <Grid container sx={{ mt: 2 }}>
+        <Grid container sx={{ mt: 10, p: 4 }}>
           <Slide
             direction="up"
             in={loading}
@@ -71,7 +83,7 @@ const Contact = () => {
               <Card sx={{ justifyContent: "center", alignItems: "center" }}>
                 <form autoComplete="off" onSubmit={formik.handleSubmit}>
                   <CardContent>
-                    <Grid container>
+                    <Grid container id="container" className="justify-end">
                       <Grid sx={{ direction: "ltr" }}>
                         <Grid container spacing={2}>
                           <Grid size={{ xs: 12, md: 6 }}>
@@ -201,14 +213,15 @@ const Contact = () => {
                         {formik.errors.recaptcha}
                       </Typography>
                     )}
-                    <Button
+                    <LoadingButton
+                      loading={buttonLoading}
                       fullWidth
                       type="submit"
                       color="success"
                       variant="contained"
                     >
                       ارسال
-                    </Button>
+                    </LoadingButton>
                   </CardActions>
                 </form>
               </Card>
