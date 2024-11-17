@@ -24,6 +24,8 @@ supabase
           message: `New Contact Form has been submitted: \n
          subject: ${JSON.stringify(payload.new.subject)}
          message: ${JSON.stringify(payload.new.message)}
+
+        see all messages: https://dofxo.github.io/portfolio-contact-form
         `,
         },
         userId,
