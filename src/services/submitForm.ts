@@ -1,10 +1,6 @@
-import axios from "axios";
 import { formDataType } from "../types";
+import { supabase } from "../utils/supabase";
 
-export const submitForm = (data: formDataType) => {
-  return axios.post(import.meta.env.VITE_GOOGLE_SHEETS, data, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+export const submitForm = async (data: formDataType) => {
+  return await supabase.from("messages").insert([data]).select();
 };

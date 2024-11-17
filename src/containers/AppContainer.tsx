@@ -65,7 +65,7 @@ const AppContainer = () => {
             </SwipeableViews>
           </PagesContainer>
         </MainLayout>
-        <Toaster position="top-right" reverseOrder={false} />
+        <Toaster position="top-center" reverseOrder={false} />
       </MainContext.Provider>
     </>
   );
