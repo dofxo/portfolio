@@ -9,8 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import TitleAdder from "../HOC/TitleAdder";
-import CustomDivier from "./parts/CustomDivier";
+import TitleAdder from "../../HOC/TitleAdder";
+import CustomDivier from "../../components/general/CustomDivier";
 import {
   AccountCircle,
   EmailRounded,
@@ -19,9 +19,9 @@ import {
   SubjectRounded,
 } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import worldMapImage from "../../src/assets/images/worldmap.svg";
+import worldMapImage from "../../../src/assets/images/worldmap.svg";
 import { useFormik } from "formik";
-import { contactValidationSchema } from "./validations/contactValidation";
+import { contactValidationSchema } from "../validations/contactValidation";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
@@ -59,7 +59,7 @@ const Contact = () => {
           icon={<AccountCircle />}
           color="warning"
         />
-        <Grid container sx={{ mt: 2 }}>
+        <Grid container sx={{ mt: 10, p: 4 }}>
           <Slide
             direction="up"
             in={loading}

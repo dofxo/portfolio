@@ -1,10 +1,10 @@
 import { Box, Card } from "@mui/material";
-import TitleAdder from "../HOC/TitleAdder";
-import CustomDivier from "./parts/CustomDivier";
+import TitleAdder from "../../HOC/TitleAdder";
+import CustomDivier from "../../components/general/CustomDivier";
 import { HomeRepairServiceRounded, SchoolRounded } from "@mui/icons-material";
-import EducationTimeLine from "./parts/EducationTimeLine";
-import JobsTimeLine from "./parts/JobsTimeLine";
-import Model3D from "../components/general/Model3D";
+import EducationTimeLine from "./EducationTimeLine";
+import JobsTimeLine from "./JobsTimeLine";
+import Model3D from "../../components/general/Model3D";
 import Grid from "@mui/material/Grid2";
 
 const Resume = () => {
