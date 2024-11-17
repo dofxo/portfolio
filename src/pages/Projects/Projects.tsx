@@ -19,6 +19,7 @@ import { CodeRounded } from "@mui/icons-material";
 import Grid from "@mui/material/Grid2";
 import { projects } from "../../constant/data/projects";
 import { pink } from "@mui/material/colors";
+import Wrapper from "../parts/Wrapper";
 
 const Projects = () => {
   const [loading, setLoading] = useState(false);
@@ -31,12 +32,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <Card
-      sx={{
-        minHeight: "100vh",
-        backgroundColor: "whitesmoke",
-      }}
-    >
+    <Wrapper>
       <CardContent>
         <Slide
           direction="down"
@@ -112,7 +108,7 @@ const Projects = () => {
           ))}
         </Grid>
       </CardContent>
-    </Card>
+    </Wrapper>
   );
 };
 

@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  Avatar,
-  Box,
-  Chip,
-  Typography,
-} from "@mui/material";
+import { CardContent, Avatar, Box, Chip, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
 import avatar from "/src/assets/images/MohammadKargar.jpg";
@@ -14,16 +7,11 @@ import CustomDivier from "../../components/general/CustomDivier";
 import Skills from "./Skills";
 import TitleAdder from "../../HOC/TitleAdder";
 import CountUp from "react-countup";
+import Wrapper from "../parts/Wrapper";
 
 const About = () => {
   return (
-    <Card
-      sx={{
-        backgroundColor: "whitesmoke",
-        overflow: "hidden",
-        minHeight: "100vh",
-      }}
-    >
+    <Wrapper>
       <CardContent>
         <Grid container sx={{ mx: 3 }}>
           <Grid size={{ xs: 12 }}>
@@ -61,7 +49,7 @@ const About = () => {
                       }
                     />
                     <Typography
-                      className="!text-[11px] md:!text-[17px]"
+                      className="!text-[11px] md:!text-[17px] flex justify-center items-center"
                       sx={{ color: item.color }}
                     >
                       {item.title}
@@ -94,7 +82,7 @@ const About = () => {
           </Grid>
         </Grid>
       </CardContent>
-    </Card>
+    </Wrapper>
   );
 };
 

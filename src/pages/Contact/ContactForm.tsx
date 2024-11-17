@@ -50,7 +50,7 @@ const ContactForm = () => {
   return (
     <form autoComplete="off" onSubmit={formik.handleSubmit}>
       <CardContent>
-        <Grid container id="container" className="justify-end">
+        <Grid id="this" container className="justify-end !p-1">
           <Grid sx={{ direction: "ltr" }}>
             <Grid container spacing={2}>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -171,6 +171,7 @@ const ContactForm = () => {
           type="submit"
           color="success"
           variant="contained"
+          style={{ marginRight: 0 }}
         >
           ارسال
         </LoadingButton>

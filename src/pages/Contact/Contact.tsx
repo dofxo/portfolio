@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import ContactForm from "./ContactForm";
 import ContactDesciption from "./ContactDesciption";
 import worldMapImage from "../../../src/assets/images/worldmap.svg";
+import Wrapper from "../parts/Wrapper";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <Card className="min-h-[100vh] bg-[whitesmoke] flex flex-col">
+    <Wrapper>
       <CardContent>
         <CustomDivier
           textAlign="center"
@@ -27,7 +28,7 @@ const Contact = () => {
           icon={<AccountCircle />}
           color="warning"
         />
-        <Grid container sx={{ mt: 10, p: 4 }}>
+        <Grid container sx={{ mt: 10 }}>
           <Slide
             direction="up"
             in={loading}
@@ -62,7 +63,7 @@ const Contact = () => {
           </Slide>
         </Grid>
       </CardContent>
-    </Card>
+    </Wrapper>
   );
 };
 
