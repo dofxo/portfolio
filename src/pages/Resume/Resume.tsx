@@ -1,4 +1,4 @@
-import { Box, Card } from "@mui/material";
+import { Box } from "@mui/material";
 import TitleAdder from "../../HOC/TitleAdder";
 import CustomDivier from "../../components/general/CustomDivier";
 import { HomeRepairServiceRounded, SchoolRounded } from "@mui/icons-material";
