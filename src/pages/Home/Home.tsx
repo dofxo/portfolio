@@ -41,7 +41,7 @@ const Home = () => {
           >
             FrontEnd Developer
           </Typography>
-          <img src={reactIcon} className="w-[5%] absolute top-0 right-0" />
+          <img src={reactIcon} className="w-[50px] absolute top-0 right-0" />
         </Box>
       </Box>
     </LazyLoadComponent>
