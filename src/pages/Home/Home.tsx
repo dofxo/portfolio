@@ -1,4 +1,4 @@
-import { Typography, Box, Avatar } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import TitleAdder from "../../HOC/TitleAdder";
 import backgroundImg from "/src/assets/images/noisy.png";
 import reactIcon from "/src/assets/images/reactIcon.png";
