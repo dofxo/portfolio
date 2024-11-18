@@ -4,7 +4,6 @@ import {
   CardContent,
   CardActions,
   CardActionArea,
-  CardMedia,
   Slide,
   Box,
   Button,
