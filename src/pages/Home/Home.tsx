@@ -5,6 +5,7 @@ import TextTransition, { presets } from "react-text-transition";
 import TitleAdder from "../../HOC/TitleAdder";
 import backgroundImg from "/src/assets/images/image.jpg";
 import useMediaCustomQuery from "../../customHooks/useMediaCustomQuery";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Home = () => {
   const nameEl = useRef(null);
@@ -33,64 +34,70 @@ const Home = () => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundImage: `url(${backgroundImg})`,
-        backgroundPosition: "center",
-      }}
-    >
+    <LazyLoadComponent>
       <Box
         sx={{
-          textAlign: "center",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `url(${backgroundImg})`,
+          backgroundPosition: "center",
         }}
-        className="flex flex-col"
       >
-        {isSmUp ? (
-          <Typography
-            ref={nameEl}
-            variant="h3"
-            color="whitesmoke"
-            sx={{ p: 2 }}
-          />
-        ) : (
-          <Typography variant="h3" color="whitesmoke" sx={{ fontSize: "30px" }}>
-            محمد کارگر
-          </Typography>
-        )}
-        {isSmUp ? (
-          <TextTransition springConfig={presets.gentle}>
+        <Box
+          sx={{
+            textAlign: "center",
+          }}
+          className="flex flex-col"
+        >
+          {isSmUp ? (
+            <Typography
+              ref={nameEl}
+              variant="h3"
+              color="whitesmoke"
+              sx={{ p: 2 }}
+            />
+          ) : (
+            <Typography
+              variant="h3"
+              color="whitesmoke"
+              sx={{ fontSize: "30px" }}
+            >
+              محمد کارگر
+            </Typography>
+          )}
+          {isSmUp ? (
+            <TextTransition springConfig={presets.gentle}>
+              <Typography
+                variant="h4"
+                color="#e2e2e2"
+                sx={{
+                  p: 2,
+                  textDecoration: "underline",
+                }}
+              >
+                {["", "(ReactJs) توسعه دهنده فرانت اند"][textIndex]}
+              </Typography>
+            </TextTransition>
+          ) : (
             <Typography
               variant="h4"
               color="#e2e2e2"
               sx={{
                 p: 2,
+                fontSize: "17px",
                 textDecoration: "underline",
               }}
             >
-              {["", "(ReactJs) توسعه دهنده فرانت اند"][textIndex]}
+              (ReactJs) توسعه دهنده فرانت اند
             </Typography>
-          </TextTransition>
-        ) : (
-          <Typography
-            variant="h4"
-            color="#e2e2e2"
-            sx={{
-              p: 2,
-              fontSize: "17px",
-              textDecoration: "underline",
-            }}
-          >
-            (ReactJs) توسعه دهنده فرانت اند
-          </Typography>
-        )}
+          )}
+        </Box>
       </Box>
-    </Box>
+    </LazyLoadComponent>
   );
 };
 

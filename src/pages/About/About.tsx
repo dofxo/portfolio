@@ -8,6 +8,7 @@ import Skills from "./Skills";
 import TitleAdder from "../../HOC/TitleAdder";
 import CountUp from "react-countup";
 import Wrapper from "../parts/Wrapper";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const About = () => {
   return (
@@ -60,12 +61,13 @@ const About = () => {
 
               <Avatar
                 variant="rounded"
-                src={avatar}
                 sx={{
                   height: 250,
                   width: 250,
                 }}
-              />
+              >
+                <LazyLoadImage effect="blur" src={avatar} />
+              </Avatar>
             </Box>
           </Grid>
         </Grid>

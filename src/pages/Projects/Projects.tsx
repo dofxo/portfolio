@@ -20,6 +20,7 @@ import Grid from "@mui/material/Grid2";
 import { projects } from "../../constant/data/projects";
 import { pink } from "@mui/material/colors";
 import Wrapper from "../parts/Wrapper";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Projects = () => {
   const [loading, setLoading] = useState(false);
@@ -66,12 +67,7 @@ const Projects = () => {
               >
                 <Card sx={{ maxWidth: 345, backgroundColor: "#b164c5" }}>
                   <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      image={item.image}
-                      alt={item.title}
-                      sx={{ height: "200px", width: 1 }}
-                    />
+                    <LazyLoadImage src={item.image} effect="blur" />
                     <CardContent>
                       <Typography
                         textAlign="left"
