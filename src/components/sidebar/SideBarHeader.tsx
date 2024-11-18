@@ -4,6 +4,7 @@ import { RandomReveal } from "react-random-reveal";
 import { farsiAlphabet } from "../../constant/persianAlphabet";
 import { social } from "../../constant/data/socials";
 import useMediaCustomQuery from "../../customHooks/useMediaCustomQuery";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SideBarHeader = () => {
   const isSmUp = useMediaCustomQuery("sm");
@@ -14,7 +15,9 @@ const SideBarHeader = () => {
         src={avatarImg}
         variant="rounded"
         sx={{ height: "200px", width: "200px", margin: "0 auto", mb: 2 }}
-      />
+      >
+        <LazyLoadImage src={avatarImg} />
+      </Avatar>
       <Typography variant="h6" color="primary">
         {isSmUp ? (
           <RandomReveal

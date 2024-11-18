@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { cacheRTL, theme } from "./templates/theme/index.ts";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryFallBack from "./components/general/ErrorBoundaryFallBack.tsx";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
