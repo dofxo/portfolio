@@ -9,39 +9,24 @@ import muiIcon from "/src/assets/images/MUI.svg";
 import gitIcon from "/src/assets/images/git.svg";
 import nextJsIcon from "/src/assets/images/next.svg";
 import supabaseIcon from "/src/assets/images/supabase.svg";
+import nodejs from "/src/assets/images/nodejs.svg";
+import express from "/src/assets/images/express.svg";
+import ejs from "/src/assets/images/ejs.svg";
+import nestjs from "/src/assets/images/nestjs.svg";
+import mongodb from "/src/assets/images/mongodb.svg";
+import socketio from "/src/assets/images/socketio.svg";
 
-export const devSkills = [
-  {
-    icon: htmlIcon,
-  },
-  {
-    icon: cssIcon,
-  },
-  {
-    icon: sassIcon,
-  },
-  {
-    icon: tailwindIcon,
-  },
-  {
-    icon: jsIcon,
-  },
-  {
-    icon: tsIcon,
-  },
-  {
-    icon: nextJsIcon,
-  },
-  {
-    icon: reactIcon,
-  },
-  {
-    icon: muiIcon,
-  },
-  {
-    icon: gitIcon,
-  },
-  {
-    icon: supabaseIcon,
-  },
+export const frontSkills = [
+  htmlIcon,
+  cssIcon,
+  sassIcon,
+  tailwindIcon,
+  jsIcon,
+  nextJsIcon,
+  reactIcon,
+  muiIcon,
 ];
+
+export const backSkills = [nodejs, express, nestjs, mongodb, ejs];
+
+export const generalSkills = [gitIcon, supabaseIcon, tsIcon, socketio];

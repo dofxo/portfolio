@@ -36,22 +36,18 @@ body {
 }
 
 .responsive-typography-1 {
-  font-size: 110px !important;
+  font-size: 100px !important;
 
-  @media screen and (max-width: 1280px) {
-    font-size: 80px !important;
-  }
-
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1330px) {
     font-size: 60px !important;
   }
 
-  @media screen and (max-width: 580px) {
+  @media screen and (max-width: 715px) {
     font-size: 40px !important;
   }
 
-  @media screen and (max-width: 400px) {
-    font-size: 35px !important;
+  @media screen and (max-width: 460px) {
+    font-size: 30px !important;
   }
 
 
