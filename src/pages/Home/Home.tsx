@@ -2,7 +2,6 @@ import { Typography, Box } from "@mui/material";
 import TitleAdder from "../../HOC/TitleAdder";
 import backgroundImg from "/src/assets/images/noisy.png";
 import reactIcon from "/src/assets/images/reactIcon.png";
-import nestJs from "/src/assets/images/nestjs-2.svg";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const Home = () => {
@@ -40,12 +39,9 @@ const Home = () => {
             color="#e2e2e2"
             className="responsive-typography-1"
           >
-            MERN stack Developer
+            FrontEnd Developer
           </Typography>
-          <Box className="w-[30px] md:w-[50px] absolute top-0 right-12 flex gap-5">
-            <img src={nestJs} />
-            <img src={reactIcon} />
-          </Box>
+          <img src={reactIcon} className="w-[50px] absolute top-0 right-0" />
         </Box>
       </Box>
     </LazyLoadComponent>
