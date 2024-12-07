@@ -1,6 +1,6 @@
 import { CardContent, Avatar, Box, Chip, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { CodeRounded } from "@mui/icons-material";
+import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
 import avatar from "/src/assets/images/MohammadKargar.jpg";
 import { experiencesInfo } from "../../constant/data/experiencesInfo";
 import CustomDivier from "../../components/general/CustomDivier";
@@ -74,6 +74,12 @@ const About = () => {
 
         <Grid container className="mt-[50px]">
           <Grid sx={{ width: 1, mt: 1 }}>
+            <CustomDivier
+              textAlign="center"
+              title="مهارت های من"
+              icon={<SelfImprovementRounded />}
+              color="secondary"
+            />
             <Skills />
           </Grid>
         </Grid>

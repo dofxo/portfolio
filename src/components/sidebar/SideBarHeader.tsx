@@ -35,7 +35,7 @@ const SideBarHeader = () => {
           <RandomReveal
             isPlaying
             duration={2}
-            characters="MERN stack Developer"
+            characters="Frontend Developer"
           />
         ) : (
           "Frontend Developer"
